@@ -92,7 +92,7 @@ public class ServerDao {
         String s = null;
         while ((s=bufferedReader.readLine())!=null && s.length()!=0){
             String[] split = s.split(",");
-            Subject subject = new Subject(split[0], split[1], split[2].trim());
+            Subject subject = new Subject(split[0], split[1],split[2].trim());
             subjectList.add(subject);
         }
         System.out.println("dao-importSubject:"+subjectList.toString());

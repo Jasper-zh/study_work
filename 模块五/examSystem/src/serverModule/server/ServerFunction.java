@@ -230,7 +230,8 @@ public class ServerFunction extends Thread{
                 }
                 int grade = 0;
                 for (int i=0;i<subjectList.size();i++) {
-                    if(subjectList.get(i).getAnswer().equals(answers.charAt(i))){
+                    System.out.println(answers.charAt(i));
+                    if(subjectList.get(i).getAnswer().equals(String.valueOf(answers.charAt(i)))){
                         grade++;
                     }
                 }
