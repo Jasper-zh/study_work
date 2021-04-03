@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+      height: 700px;
+      border-radius: 10%;
+      border: 2px solid darkslategrey;
+      position: absolute;
+      top:50%;
+      left:50%;
+      margin: -350px 0 0 -250px;
+    }
+    #title{
+      font-family:"STHeiti Light [STXihei]";
+      font-size: x-large;
+      margin: 30px;
+    }
+    #form{
+      height: 500px;
+      width: 400px;
+      border: 2px solid darkslategrey;
+      margin-top: 40px;
+      margin-left: 50px;
+      border-radius: 5%;
+    }
+    .item{
+      margin: 30px;
+      
+      height: 40px;
+      text-align: 40px;
+    }
+    .label{
+      line-height: 40px;
+    }
+    .input{
+      height: 30px;
+      width: 200px;
+    }
+    .button{
+      height: 40px;
+      width: 80px;
+      border-radius: 10%;
+      margin:20px 0 0 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div id="title">注册信息</div>
+    <form action="">
+      <div id="form">
+
+        <div class="item">
+          <label class="label">用户名:&nbsp;</label>
+          <input type="text" class="input" id="name" placeholder="请输入用户名"/>
+        </div>
+        
+        <div class="item">
+          <label class="label">密码:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <input type="password" class="input" placeholder="请输入密码"/>
+        </div>
+
+        <div class="item">
+          <label class="label">性别:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="radio" name="sex" checked="checked">女
+            <input type="radio" name="sex">男
+        </div>
+
+        <div class="item">
+          <label class="label">学历:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          <select>
+            <option value ="volvo">本科</option>
+            <option value ="saab">专科</option>
+            <option value="opel">高中</option>
+            <option value="audi">初中</option>
+          </select>
+        </div>
+
+        <div class="item" class="label">
+          <label>自我介绍:&nbsp;</label></br></br>
+          <textarea id="desc"></textarea>
+        </div>                        
+        
+      </div>
+      <div class="button">
+        <button onclick="save()" style="height: 100%;width: 100%;border-radius: 10%;">提交</button>
+      </div>
+    </form>
+    </form>
+  </div>
+  <script>
+    window.onload = function(){
+      var name = document.getElementById("name");
+      name.onmouseout = function(){
+        if(name.value!='admin'){
+          alert("当前用户名只能是admin")
+        }
+      }
+    }
+    function save(){
+      var desc = document.getElementById("desc");
+      alert(desc.value);
+    }
+  </script>
+</body>
+</html>
