@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+<style>
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .buttons{
+    float: left;
+  }
+  .row{
+    margin-bottom: 20px;
+  }
+</style>
+<body style="padding: 60px;">
+  <div class="container center-block">
+    <div class="row">
+      <div class="buttons">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">新增</button>
+        <button type="button" class="btn btn-info" onclick="delete_user()">删除</button>
+        <button type="button" class="btn btn-info" onclick="openSave()">编辑</button>
+        <button type="button" class="btn btn-info" onclick="search()">查询</button>
+      </div>
+        
+      <div class="col-xs-2">
+        <input type="text" class="form-control" placeholder="按工号查找" id="query1" name="code">
+      </div>
+      <div class="col-xs-2">
+        <input type="text" class="form-control" placeholder="按用户名查找" id="query2" name="name">
+      </div>
+    </div>
+    <div class="row">
+      <table class="table table-responsive table-striped table-hover" id="mytable">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="checkAll"/></th>
+                <th>工号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>密码</th>
+                <th>年龄</th>
+                <th>出生日期</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!-- 由js去加载 
+            <tr class="info">
+              <td>001</td>
+              <td>A001</td>
+              <td>Jasper</td>
+              <td>男</td>
+            ...
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                  &times;
+              </button>
+              <h4 class="modal-title" id="myModalLabel">
+                  新增或修改
+              </h4>
+          </div>
+          <form id="form_data">
+            <div class="modal-body">
+                <label>工号</label>
+                <input type="text" name="code" class="form-control" style="margin-bottom: 10px;" placeholder="请输入工号">
+                <label>姓名</label>
+                <input type="text" name="name" class="form-control" placeholder="请输入姓名"><br>
+                <label>性别</label>
+                <input type="radio" name="sex" value="男" checked> 男
+                <input type="radio" name="sex" value="女" style="margin-bottom: 10px;"> 女 <br>
+                <label>密码</label>
+                <input type="text" name="password" class="form-control" style="margin-bottom: 10px;">
+                <label>年龄</label>
+                <input type="text" name="age" class="form-control" style="margin-bottom: 10px;">
+                <label>生日</label>
+                <input type="date" name="birthday" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="close()">关闭
+                </button>
+                <button type="button" onclick="save_user()" class="btn btn-primary">
+                    提交
+                </button>
+            </div>
+          </form>
+      </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./utils.js"></script>
+  <script src="./crud.js"></script>
+</body>
+</html>
